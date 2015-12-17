@@ -30,7 +30,7 @@ a quick way to deal with an unmanageable set. first column is date `01-SEP-14` a
 
     head -n1 data.txt > data2015.txt
 
-    awk -F '\t' '$1 ~ /..-...-15/'{print;}' data.txt >> data2015.txt
+    awk -F '\t' '$1 ~ /..-...-15/ {print;}' data.txt >> data2015.txt
 
 alternately, by using the date delimiter and exact match:
 

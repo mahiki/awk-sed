@@ -1,4 +1,4 @@
-## awk - aggregate to reduce groups, hence rows
+## awk - aggregate to reduce groups
 *i have a standard DW outputfile with many rows, trying to shrink it by aggregating one column value, so team can load fewer rows into excel*
 
 ----
@@ -14,15 +14,15 @@
 
 *sum of column 3 total*
 
-`awk '{x+=$3}END{print x}' filename.txt`
+	awk '{x+=$3} END {print x}' filename.txt
 
 *list unique values of column 1*
 
-`awk '{a[$1];}{for (i in a)print i;}' filename.txt | sort -u`
+	awk '{a[$1];} {for (i in a)print i;}' filename.txt | sort -u
 
 *sum of columns by one group*
 
-`awk '{a[$1]+=$3;}END{for (i in a)print i, a[i];}' filename.txt`
+	awk '{a[$1]+=$3;} END {for (i in a)print i, a[i];}' filename.txt
 
     3M      46.5
     Litt    310
@@ -37,7 +37,7 @@
     Litt    a2014   2000    300.00
     Zebra   a2015   3000    0.13
 
-`awk '{  a[$1,"\t",$2]+=$4;}END{for (i in a)print i, a[i];}' filename.txt`
+	awk '{  a[$1,"\t",$2]+=$4;} END {for (i in a)print i, a[i];}' filename.txt
 
     Litt    a2014 310
     3M      a2014 45
@@ -139,7 +139,7 @@ selecting `MONTH_YR/COHORT/BRAND` of Apr-15/2014asins/Sandusky Lee
 ### sort the date row, truncate, append recent data to header
 alternately, we can reverse sort the dates and truncate the file, keeping only the last 3 years. store the complete headings `head -n1 datafile.txt > filesname.txt`, we'll append results to it as prepending is a no-go.
 
-first the sort test.  take a random sample of rows for dates:
+first the sort test.  take a random 1/10000th sample of rows for dates:
 
     tail -n +2 datafile.txt | awk 'BEGIN {srand()} !/^$/ { if (rand() <= .000001) print $0}' > testfile.txt
 
