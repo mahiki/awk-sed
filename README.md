@@ -15,9 +15,9 @@
 	+ script writing
 
 #### contents
-**1. awk**
-**2. sed**
-**3. mlr**
+**1. awk**  
+**2. sed**  
+**3. mlr**  
 
 #### 1. awk
 - basic file operations
