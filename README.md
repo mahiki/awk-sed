@@ -23,4 +23,9 @@
 - basic file operations
 - sum aggregates to degroup ('degroup'?)
 
+##### sedawk-book
+see readme here for study notes and chapter progress
+
+
+
 
