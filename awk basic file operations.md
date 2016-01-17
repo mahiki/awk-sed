@@ -1,4 +1,3 @@
-----
 # awk - random informative examples
 *its all about big file outputs from ETL, and chunking them down quickly* 
 

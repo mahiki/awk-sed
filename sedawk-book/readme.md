@@ -1,4 +1,7 @@
-### sed-awk book excercizes
+### sed-awk book excercises and notes
+these are general notes and snippets  
+a tighter more organized bit is in `best-of-sedawk.md` which I'll move to parent folder.
+
     	../repo/awk-sed/sedawk-book/
 
 using `hamlet.txt`
@@ -36,7 +39,9 @@ POSIX standards cover non-english, and define classes with `[[:alpha:]]` and suc
 
 egrep is the extended regular expressions
 
-	Class	Matching Characters
+POSIX standard classes
+
+	Class		Matching Characters
 	[:alnum:]	Printable characters (includes whitespace)
 	[:alpha:]	Alphabetic characters
 	[:blank:]	Space and tab characters
@@ -48,9 +53,27 @@ egrep is the extended regular expressions
 	[:punct:]	Punctuation characters
 	[:space:]	Whitespace characters
 	[:upper:]	Uppercase characters
-	[:xdigit:]	Hexadecimal digits”
+	[:xdigit:]	Hexadecimal digits
 
 The POSIX definitions will gradually become more prevalent, but you can see how awkward this is.
 
-I think i'll ignore these.
+I think i'll ignore these, unless unicode multi-language stuff.
+
+###### wildcards
+```
+. + *	?					the wildcards, single/one or more/zero or more/zero or one
+?  ??						optional match lazy/greedy
++?						one or more, lazy
+".*"						all characters between, plus the quotation marks.
+\[.*\]					all characters and brackets enclosed
+awk '/\[.*Horatio.*]/' hamlet.txt	all brackets containing 'Horatio'
+^$						blank line
+^ *$						blank line with spaces
+```
+
+note that `?` in the shell is like `.` in regex.
+
+in sed or grep, `^` and `$` are special only at begin/end of regex.  
+in awk, `^`, `$` are always special.
+
 
