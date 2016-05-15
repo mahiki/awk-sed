@@ -3,9 +3,13 @@ a truly great book on programming from 1988. the performance tests they run to f
 
 ### notes index and summary
 ```
-01-awk-performance.md						# machine specific time sink identifiers
-
+├── awk-kernighan
+│   ├── 01-awk-performance.md					# machine specific time sink identifiers
+│   ├── performance-test-data.txt
+│   ├── readme.md
+│   ├── rsrc
+│   │   ├── asinhist.txt
+│   │   └── testdata.txt
+│   └── src
+│       └── datafilegen -> /Users/merlinr/repo/utility/shell/datafilegen
 ```
-
-
-
