@@ -26,6 +26,9 @@
 ##### sedawk-book
 see readme here for study notes and chapter progress
 
+#### 2. sed
+- sed-mysteries. *puzzling stumpers that i had to deal with*
+- 
 
 
 
