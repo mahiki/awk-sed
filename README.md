@@ -19,6 +19,13 @@
 **2. sed**  
 **3. mlr**  
 
+#### production scripts
+more often i have been taking ideas straight into usage without general study.  see the following repo:
+
+	/mahiki/utility
+			|----	startup-batch			# testing new scripts
+			|---- shell					# production scripts
+
 #### 1. awk
 - basic file operations
 - sum aggregates to degroup ('degroup'?)
