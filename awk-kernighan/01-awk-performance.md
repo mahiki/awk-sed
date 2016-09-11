@@ -9,6 +9,8 @@ slowness can depend on machine specific implementations of:
 The following table of timing tests will help you refactor code for each machine.  
 I'm using a 100K (4.1MB, 4.3M char) row file with 5 fields separated by tabs.
 
+file: `rsrc/performance-test-data.txt`
+
 ```
 timing in seconds, user + system total
 program                                              -|- MBP           -|- RHEL VM on Intel PC
