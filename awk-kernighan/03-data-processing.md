@@ -42,3 +42,29 @@ function rep(n,s,   t) {        # return string of n s's
     return t
 }
 ```
+
+notice the postfix operator in `n-- > 0` controls the while loop.  you would want to test for negative values in more generic usage. 
+
+let's test `histogram.awk` on 200 random numbers from 0 to 100.
+
+```
+merlinr ❯ ➤ awk 'BEGIN {for(i=1; i<=200; i++) print int(101 * rand() )}' | awk -f src/histogram.awk
+
+  0 -  9:  13 *************
+ 10 - 19:  21 *********************
+ 20 - 29:  22 **********************
+ 30 - 39:  15 ***************
+ 40 - 49:  27 ***************************
+ 50 - 59:  16 ****************
+ 60 - 69:  20 ********************
+ 70 - 79:  20 ********************
+ 80 - 89:  17 *****************
+ 90 - 99:  27 ***************************
+100:         2 **
+```
+
+#### excercizes
+- [ ]	**3.5**	scale the rows of stars so they don't overflow line length when there's a lot of data.  
+- [ ] **3.6** 	make a version of the histogram that divides the input into a specifieed number of buckets, adjusting the ranges to the data seen.
+- [ ] **3.7**	the lone 100 bucket isn't right, fix that too.
+
