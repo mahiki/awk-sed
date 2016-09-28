@@ -13,14 +13,14 @@ file: `rsrc/performance-test-data.txt`
 
 ```
 timing in seconds, user + system total
-program                                              -|- MBP OSX awk   -|- MBP gawk      -|- RHEL VM on Intel PC
-------------------------------------------------------|-----------------|-----------------|---------------------
-END { print NR }                                      |     0.017		|  	0.019       | 
-{ n++ } END { print n }                               |     0.022		|     0.022       |
-{ i=NF } END { print i }                              |     0.041		|     0.043       |
-{ a+=$4; b+=$5 } END { print a, b} # aggregate        |     0.073		| 	0.087		|
-{a[$2]+=$4} END {for (i in a) print a[i]}             |     0.091		|     0.103		|
-wc                                                    |     0.009		|	0.008		|
+program                                              -|- MBP OSX awk   -|- MBP gawk      -|- ubuntu -|- RHEL VM on Intel PC
+------------------------------------------------------|-----------------|-----------------|----------|----------------------
+END { print NR }                                      |     0.017       |     0.019       |   0.011  |   
+{ n++ } END { print n }                               |     0.022       |     0.022       |   0.014  |  
+{ i=NF } END { print i }                              |     0.041       |     0.043       |   0.025  |  
+{ a+=$4; b+=$5 } END { print a, b} # aggregate        |     0.073       |     0.087       |   0.039  |  
+{a[$2]+=$4} END {for (i in a) print a[i]} # to file   |     0.091       |     0.103       |   0.056  |  
+wc                                                    |     0.009       |     0.008       |   0.007  |  
 ```
 
 
@@ -52,3 +52,13 @@ the same test on a 3 billion row file:
 `(45.848 seconds)`
 
 
+### ubuntu machine
+can't get the RHEL going, but a can get to ubuntu right now. first copy the file
+
+      scp ~/repo/awk-sed/awk-kernighan/rsrc/performance-test-data.txt merlinr@uf8bc126ce5c9538634f8:~/Desktop
+
+now I have the data file and can run those tests.
+
+      time awk 'END { print NR }' performance-test-data.txt
+
+OK its faster.
