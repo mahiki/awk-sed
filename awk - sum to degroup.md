@@ -181,7 +181,6 @@ total sum:
 gives `22311771.20` **EXACT MATCH**
 *the delimiter choice is important, default put me in the wrong row*
 
-
 **DANGER** the whitespace in a field will show up as a delimiter, so you can hit an earlier than expected column!
 
 category:
