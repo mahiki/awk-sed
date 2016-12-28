@@ -1,7 +1,7 @@
 ## arrays and applications in awk
-[ref awk man page for original awk](http://man7.org/linux/man-pages/man1/awk.1p.html)
-[gnu awk manual *the more better awk*](https://www.gnu.org/software/gawk/manual/gawk.html) better performance and arrays
-[merlin's answer to awk array q on stackoverflow](http://stackoverflow.com/questions/3060600/awk-array-iteration-for-multi-dimensional-arrays/41357243#41357243)
+[ref awk man page for original awk](http://man7.org/linux/man-pages/man1/awk.1p.html)  
+[gnu awk manual *the more better awk*](https://www.gnu.org/software/gawk/manual/gawk.html) better performance and arrays  
+[merlin's answer to awk array q on stackoverflow](http://stackoverflow.com/questions/3060600/awk-array-iteration-for-multi-dimensional-arrays/41357243#41357243)  
 
 ### example data
 	hawkings reftag_customer_asin_brand_category_OPS.txt 
@@ -57,15 +57,15 @@ time awk -F'\t' 'NR>1 { gc[$5][$1]++ }
 				print "total group+customers: " total }' reftag_customer_asin_brand_category_OPS.txt
 1.1 seconds
 
-BISS-Email-Campaigns           customers:     24569
-BISS-Influencer-Associations   customers:        96
-Amazon Business - Registration customers:         1
-BISS-Onsite-Merchandising      customers:    153778
-BISS-AB-Email                  customers:      2766
-BISS-Display-Network           customers:    114084
-BISS-Direct-Mail               customers:       288
-BISS-Social-Media              customers:       163
-BISS-Display-Publisher         customers:      2829
+SSIB-Email-Campaigns           customers:     24569
+SSIB-Influencer-Associations   customers:        96
+AB - Registration              customers:         1
+SSIB-Onsite-Merchandising      customers:    153778
+SSIB-AB-Email                  customers:      2766
+SSIB-Display-Network           customers:    114084
+SSIB-Direct-Mail               customers:       288
+SSIB-Social-Media              customers:       163
+SSIB-Display-Publisher         customers:      2829
 total group+customers: 298574
 ```
 
