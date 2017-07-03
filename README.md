@@ -1,13 +1,24 @@
-### awk-sed
+### awk-sed learning repo
 *tutorial lessons, scripts and utility functions in awk, sed, mlr or other unix tools*
 
 #### resources
 - *sed & awk, 2nd Edition*, by Dale Dougherty and Arnold Robbins, OReilly 
+- note 2017-07-03: issues migrated to `repo/utility` for prod tools
+
+#### todo:
+- issues opened for utility functions like `hawkings` are being resovled in `repo/utility`. soo...
+- maybe its smarter to develop within `awk-sed, datasci` etc and `utility` can be deprecated.
+- **solution?:** open issues in utility repo for tools needing development
+	+ awk-sed, datasci are learning repos, not project specific development
+	+ tutorial and learning tasks are half-assed by definition
+	+ `repo/utility` production code repo
+	+ **SO:** move your issue opens from `(datasci, awk-sed) -> utility`
 
 #### awk-sed
 - this is a repo for learning awk, sed, mlr, and other unix tools.  it will serve as a reference for years to come.
 - use the issues tracker to keep up with next tutorials and lessons.
 - `handy` files are found in the `handy` repo, including for `awk/sed/mlr/java/osx, etc.`
+- `utility` is for issues and development of actual production tools
 - mastery requires four skills:
 	+ how to use awk, sed or the program at hand
 	+ regular expressions
