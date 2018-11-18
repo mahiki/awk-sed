@@ -1,6 +1,15 @@
 ## parsing csv with awk
 **its a nightmare**
 
+### **DONE**
+To read and process a csv with quoted fields, newlines in fields, etc. and output as CSV or TSV
+
+```bash
+/Users/merlinr/repo/awk-sed/csv-parsing/awk-parse-csv.awk
+usage: ./awk-parse-csv.awk datafile.csv
+```
+
+###### rsrc
 [SO: parse csv with comma in field](https://stackoverflow.com/questions/4351434/parse-a-csv-file-that-contains-commans-in-the-fields-with-awk)
 *does it work with newlines in field?*
 
@@ -176,8 +185,8 @@ field 5:  (NF-3 or NF-2 email if NF = 5) + NF, notes
 # exclude first 3 rows
 # NF = 5 then username only or username is email, assign NF-2 to username field
 
-awk 'BEGIN { FS = "\",\"|^\""; RS = "\"\n"; OFS = "\",\""; ORS = "\"\n" }
-     NR > 3 {  f1 = $2
+awk 'BEGIN  {  FS = "\",\"|^\""; RS = "\"\n"; OFS = "\",\""; ORS = "\"\n" }
+            {  f1 = $2
                f2 = $3
                f3 = $(NF-2)
                f4 = $(NF-1)
@@ -197,7 +206,7 @@ http://www.premiergc.com/"
 
 # PASS!
 
-"<same awk script>"  $pwfile > pwfile-clean-for-import.csv
+"NR > 3 <same awk script>"  $pwfile > pwfile-clean-for-import.csv
 
 awk 'BEGIN { FS = "\",\"|^\""; RS = "\"\n" }
      {print NF-1}' pwfile-clean-for-import.csv
